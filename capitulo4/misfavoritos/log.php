@@ -27,8 +27,8 @@ $consulta =" INSERT INTO logs VALUES ('$utc','$anio','$mes','$dia','$hora','$min
 
 //Ejecuto
 
-$conexion = $conexion -> exec($consulta);
+$conexion = $conexion -> query ($consulta);
 //Cierro
-sqlite_close($conexion);
+//sqlite_close($conexion);
 
 ?>

@@ -16,11 +16,11 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 $consulta = "SELECT * FROM usuarios;";
 //Lanzar la consulta
 
-$resultado = $conexion -> exec($consulta);
+$resultado = $conexion -> query($consulta);
 //repasar los resultados
 
-while($fila = exec $resultado){
 
+foreach ($resultado as $fila) {
 $usuariobasedatos = $fila['usuario'];
 $contrasenabasedatos = $fila['contrasena'];
 $permisosenbase = $fila['permisos'];

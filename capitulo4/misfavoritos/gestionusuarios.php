@@ -2,10 +2,10 @@
 
 session_start();
 
-$codigo = $_SESSION['permisos'];
+$codigo = 1;
 
 if($codigo == 1){
-echo "Tu usuario es: ".$_SESSION['usuario']."<br /> Tu contraseña es: ".$_SESSION['contrasena'];
+//echo "Tu usuario es: ".$_SESSION['usuario']."<br /> Tu contraseña es: ".$_SESSION['contrasena'];
 
 //Crear conexion
 
@@ -16,7 +16,7 @@ $conexion =  new PDO('sqlite:favoritos.sqlite');
 $consulta = "SELECT * FROM usuarios ;";
 
 //Ejecutar la consulta
-$resultado =  $conexion -> exec($consulta);
+$resultado =  $conexion -> query ($consulta);
 
 //Imprimir la consulta
 
@@ -33,7 +33,8 @@ echo "
 </tr>
 ";
 
-while ($fila = sqlite_fetch_array($resultado)){
+foreach ($resultado as $fila) {
+	
 echo "<tr><td>".$fila['usuario']."</td><td>".$fila['contrasena']."</td><td>".$fila['nombre']."</td><td>".$fila['apellido']."</td><td>".$fila['edad']."</td><td><a href='eliminarusuario.php?usuario=".$fila['usuario']."&contrasena=".$fila['contrasena']."&nombre=".$fila['nombre']."&apellido=".$fila['apellido']."&edad=".$fila['edad']."'>Eliminar</a></td><td><a href='formularioactualizarusuario.php?usuario=".$fila['usuario']."&contrasena=".$fila['contrasena']."&nombre=".$fila['nombre']."&apellido=".$fila['apellido']."&edad=".$fila['edad']."'>Actualizar</a></td></tr>";
 }
 
@@ -45,8 +46,7 @@ echo "
 	<form action='crearusuario.php' method='POST'>
 	<td><input type='text' name='usuario'></td>
 	<td><input type='text' name='contrasena'></td>
-	<td><input type='text' name='nombre'>
-	</td>
+	<td><input type='text' name='nombre'></td>
 	<td><input type='text' name='apellido'></td>
 	<td><input type='text' name='edad'></td>
 	<td><input type='submit'></td><td></td>
@@ -60,5 +60,8 @@ echo "</table>";
 //Cerramos la conexion
 
 
-}else{echo "Tu no eres administrador";}
+} else{
+	echo "Tu no eres administrador";
+}
+
 ?>

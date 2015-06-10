@@ -16,7 +16,7 @@ $tituloantiguo = $_SESSION['titulo'];
 
 $consulta = "UPDATE usuarios SET usuario='".$usuario."', contrasena='".$contrasena."', nombre='".$nombre."', apellido='".$apellido."', edad='".$edad."' WHERE usuario='".$usuarioantiguo."'";
 
-$resultado =  $conexion -> exec($consulta);
+$resultado =  $conexion -> query($consulta);
 
 
 

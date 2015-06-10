@@ -19,9 +19,9 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 
 $consulta = "SELECT * FROM usuarios";
 
-$resultado = $conexion -> exec($consulta);
+$resultado = $conexion -> query($consulta);
 
-while($fila = sqlite_fetch_array($resultado)){
+foreach ($resultado as $fila) {
 
 if($fila['usuario'] == $usuario){
 
@@ -50,11 +50,11 @@ $consulta ="INSERT INTO usuarios VALUES('$usuario','$contrasena','$nombre','$ape
 
 
 //ejecutar
-$resultado = sqlite_exec($conexion,$consulta);
+//$conexion =  new PDO('sqlite:favoritos.sqlite');
+
+$resultado =  $conexion -> query($consulta);
 
 //cerrar
-sqlite_close($conexion);
-
 echo'
 
 <html>

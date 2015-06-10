@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-
+ 
 //Recupero variables
 
-$usuario = $_SESSION['usuario'];
-$contrasena = $_SESSION['contrasena'];
+//$usuario = $_SESSION['usuario'];
+//$contrasena = $_SESSION['contrasena'];
 
 $usuario = $_GET['usuario'];
 $contrasena = $_GET['contrasena'];
@@ -17,7 +17,7 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 
 $consulta = "SELECT * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND nombre='".$nombre."' AND apellido='".$apellido."' AND edad=".$edad."";
 
-$resultado =  $conexion -> exec($consulta);
+$resultado =  $conexion -> query ($consulta);
 
 echo"
 
@@ -33,7 +33,7 @@ echo"
 
 ";
 
-while($fila = sqlite_fetch_array($resultado)){
+foreach ($resultado as $fila) {
 
 echo"
 

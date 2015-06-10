@@ -11,11 +11,11 @@ echo "Tu usuario es: ".$_SESSION['usuario']."<br /> Tu contraseña es: ".$_SESSI
 
 $conexion = new PDO('sqlite:favoritos.sqlite');
 $consulta = "SELECT * FROM logs ;";
-$resultado =  $conexion -> exec($consulta);
+$resultado =  $conexion -> query ($consulta);
 
 $hora0 = 0; $hora1 = 0; $hora2 = 0; $hora3 = 0; $hora4 = 0; $hora5 = 0; $hora6 = 0; $hora7 = 0; $hora8 = 0; $hora9 = 0; $hora10 = 0; $hora11 = 0; $hora12 = 0; $hora13 = 0; $hora14 = 0; $hora15 = 0; $hora16 = 0; $hora17 = 0; $hora18 = 0; $hora19 = 0; $hora20 = 0; $hora21 = 0; $hora22 = 0; $hora23 = 0; $hora24 = 0; 
 
-while($fila = sqlite_fetch_array($resultado)){
+foreach ($resultado as $fila) {
 
 if($fila['hora'] == 0){
 $hora0++;
@@ -219,7 +219,7 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 $consulta = "SELECT * FROM logs ;";
 
 //Ejecutar la consulta
-$resultado = $conexion -> exec($consulta);
+$resultado = $conexion -> query ($consulta);
 
 //Imprimir la consulta
 /*
@@ -252,7 +252,8 @@ echo "
 </tr>
 ";
 
-while ($fila = sqlite_fetch_array($resultado)){
+foreach ($resultado as $fila) {
+
 echo "<tr><td>".$fila['utc']."</td><td>".$fila['anio']."</td><td>".$fila['mes']."</td><td>".$fila['dia']."</td><td>".$fila['hora']."</td><td>".$fila['minuto']."</td><td>".$fila['segundo']."</td><td>".$fila['ip']."</td><td>".$fila['navegador']."</td><td>".$fila['usuario']."</td><td>".$fila['contrasena']."</td></tr>";
 }
 

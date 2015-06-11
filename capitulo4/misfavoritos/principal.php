@@ -97,15 +97,13 @@ echo "
 <td>Categoria</td>
 <td>Comentario</td>
 <td>Valoracion</td>
-<td></td>
-<td></td>
 </tr>
 
 ";
 
 foreach ($resultado as $fila) {
 
-echo "<tr><td>".$fila['titulo']."</td><td>".$fila['direccion']."</td><td>".$fila['categoria']."</td><td>".$fila['comentario']."</td><td>".$fila['valoracion']."</td><td></td><td></td></tr>";
+echo "<tr><td>".$fila['titulo']."</td><td>".$fila['direccion']."</td><td>".$fila['categoria']."</td><td>".$fila['comentario']."</td><td>".$fila['valoracion']."</td></tr>";
 }
 
 echo "</table>";

@@ -12,11 +12,11 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $edad = $_POST['edad'];
 
-$tituloantiguo = $_SESSION['titulo'];
+//$tituloantiguo = $_SESSION['titulo'];
 
 $consulta = "UPDATE usuarios SET usuario='".$usuario."', contrasena='".$contrasena."', nombre='".$nombre."', apellido='".$apellido."', edad='".$edad."' WHERE usuario='".$usuarioantiguo."'";
 
-$resultado =  $conexion -> query($consulta);
+$resultado =  $conexion -> exec($consulta);
 
 
 

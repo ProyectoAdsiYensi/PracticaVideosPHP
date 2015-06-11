@@ -17,6 +17,8 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 
 $consulta = "SELECT * FROM favoritos WHERE titulo='".$titulo."' AND direccion='".$direccion."' AND categoria='".$categoria."' AND comentario='".$comentario."' AND valoracion=".$valoracion."";
 
+$result = $conexion->query($consulta);
+
 echo"
 
 <table border=1 width=100%>
@@ -30,7 +32,7 @@ echo"
 </tr>
 
 ";
-$result = $conexion->query($consulta);
+
 
 foreach ($result as $fila) {
 
@@ -61,6 +63,7 @@ echo"
 echo "</table>";
 
 $_SESSION['titulo'] = $titulo;
+$conexion=null;
 
 
 

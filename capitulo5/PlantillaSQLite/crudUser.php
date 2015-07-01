@@ -89,21 +89,27 @@
 		/* Proteccion de Datos */
 		$params = array(
 			':idUser' => $_SESSION['idUser'],
-			':nombres' => $_POST['nombres'],
-			':apellidos' => $_POST['apellidos'],
-			':direccion' => $_POST['direccion'],
-			':telefono' => $_POST['telefono'],
-			':estado' => $_POST['estado'],
+			':Nombres' => $_POST['Nombres'],
+			':Apellidouno' => $_POST['Apellidouno'],
+			':Apellidodos' => $_POST['Apellidodos'],
+			':Titulo' => $_POST['Titulo'],
+			':Descripcion' => $_POST['Descripcion'],
+			':foto' => $_POST['foto'],
+			':WebPersonal' => $_POST['WebPersonal'],
+			':Email' => $_POST['Email'],
 		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query ='UPDATE Usuarios SET
-					Nombres = :nombres,
-					Apellidos = :apellidos,
-					Direccion = :direccion,
-					Telefono = :telefono,
-					Estado = :estado  
-				 WHERE idUsuario = :idUser;
+					Nombres = :Nombres,
+					Apellidouno = :Apellidouno,
+					Apellidodos = :Apellidodos,
+					Titulo = :Titulo,
+					Descripcion = :Descripcion,  
+					foto = :foto,
+					WebPersonal = :WebPersonal,
+					Email = :Email
+			     WHERE idUsuario = :idUser;
 				';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);

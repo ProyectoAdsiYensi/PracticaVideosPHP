@@ -200,13 +200,13 @@ require_once "crudUser.php";
 
 
                             <div class="form-group">
-                                <label>Apellidos</label>
+                                <label>Primer Apellido</label>
                                 <input id="apellidouno" name="apellidouno" class="form-control" value="<?php echo $arrUser['Apellidouno']; ?>" placeholder="Primer Apellido Usuario">
                                 <p class="help-block">Apellido completos del usuario.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Apellidos</label>
+                                <label>Segundo Apellido</label>
                                 <input id="apellidodos" name="apellidodos" class="form-control" value="<?php echo $arrUser['Apellidodos']; ?>" placeholder="Segundo Apellido Usuario">
                                 <p class="help-block">Apellido completos del usuario.</p>
                             </div>

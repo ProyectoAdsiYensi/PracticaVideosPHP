@@ -27,16 +27,25 @@
 		    echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Usuarios."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla Usuarios."."<br/>";
 
 		    /* Creacion de la tabla Automoviles */
-		    $query = "CREATE TABLE `Automovil` (
-						`idAutomovil`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-						`Marca`	TEXT NOT NULL,
-						`Modelo`	TEXT NOT NULL,
-						`Color`	TEXT NOT NULL,
-						`Placa`	TEXT NOT NULL,
-						`Estado`	TEXT NOT NULL
+		    $query = "CREATE TABLE `Posts` (
+						`idutc`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+						`anio`	INTEGER NOT NULL,
+						`mes`	INTEGER NOT NULL,
+						`dia`	INTEGER NOT NULL,
+						`hora`	INTEGER NOT NULL,
+						`minuto` INTEGER NOT NULL,
+                        `segundo` INTEGER NOT NULL,
+                        `titulo` INTEGER NOT NULL,
+                        `subtitulo` INTEGER NOT NULL,
+                        `icono` INTEGER NOT NULL,
+                        `texto` INTEGER NOT NULL,
+                        `imagen` INTEGER NOT NULL,
+                        `video` INTEGER NOT NULL,
+                        `sonido` INTEGER NOT NULL
+
 					);";
 			$result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.
-			echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Automovil."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla Automovil."."<br/>";
+			echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Posts."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla Posts."."<br/>";
 
 		    $db = NULL; //Cerramos la conexion a la Base de datos.
 		}catch(PDOException $e){

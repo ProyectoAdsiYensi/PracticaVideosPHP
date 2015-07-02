@@ -16,28 +16,39 @@
 
 	}
 
-	function crearAutomovil(){
+	function crearPosts(){
 		/* Proteccion de Datos */
 		$params = array(
-			':marca' => $_POST['marca'],
-			':modelo' => $_POST['modelo'],
-			':color' => $_POST['color'],
-			':placa' => $_POST['placa'],
-			':estado' => $_POST['estado'],
+			':utc' => $_POST['utc'],
+			':anio' => $_POST['anio'],
+			':mes' => $_POST['mes'],
+			':dia' => $_POST['dia'],
+			':hora' => $_POST['hora'],
+			':minuto' => $_POST['minuto'],
+			':segundo' => $_POST['segundo'],
+			':titulo' => $_POST['titulo'],
+			':subtitulo' => $_POST['subtitulo'],
+			':icono' => $_POST['icono'],
+			':texto' => $_POST['texto'],
+			':imagen' => $_POST['imagen'],
+			':video' => $_POST['video'],
+			':sonido' => $_POST['sonido'],
+			
+
 		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO 
-					Automovil (Marca,Modelo,Color,Placa,Estado)
+					Posts (utc,anio,mes,dia,hora,minuto,segundo,titulo,subtitulo,icono,texto,imagen,video,sonido)
 				VALUES
-					(:marca,:modelo,:color,:placa,:estado)';
+					(:utc,:anio,:mes,:dia,:hora,:minuto,:segundo,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
 
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
 		if ($result > 0){
-			header('Location: viewAutomoviles.php?result=true');
+			header('Location: viewPosts.php?result=true');
 		}else{
-			header('Location: addAutomovil.php?result=false');
+			header('Location: addPosts.php?result=false');
 		}
 	}
 

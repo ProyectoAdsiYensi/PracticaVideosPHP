@@ -10,10 +10,10 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Diego Ojeada</strong>
+                                        <h5 class="media-heading"><strong>Juliet Granados</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Ayer a las 4:32 PM</p>
-                                        <p>Hola mundo como me va.... Mal</p>
+                                        <p>Hola mundo como me va.... bien</p>
                                     </div>
                                 </div>
                             </a>

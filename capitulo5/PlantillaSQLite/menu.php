@@ -8,7 +8,7 @@
                         <a href="viewUsers.php"><i class="fa fa-fw fa-bar-chart-o"></i> Usuarios</a>
                     </li>
                     <li>
-                        <a href="viewAutomoviles.php"><i class="fa fa-fw fa-table"></i> Automoviles</a>
+                        <a href="viewPosts.php"><i class="fa fa-fw fa-table"></i> Posts</a>
                     </li>
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>

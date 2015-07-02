@@ -36,13 +36,13 @@
 						`minuto` INTEGER NOT NULL,
                         `segundo` INTEGER NOT NULL,
                         `usuario` TEXT NOT NULL,
-                        `titulo` INTEGER NOT NULL,
-                        `subtitulo` INTEGER NOT NULL,
-                        `icono` INTEGER NOT NULL,
-                        `texto` INTEGER NOT NULL,
-                        `imagen` INTEGER NOT NULL,
-                        `video` INTEGER NOT NULL,
-                        `sonido` INTEGER NOT NULL
+                        `titulo` TEXT NOT NULL,
+                        `subtitulo` TEXT NOT NULL,
+                        `icono` TEXT NOT NULL,
+                        `texto` TEXT NOT NULL,
+                        `imagen` TEXT NOT NULL,
+                        `video` TEXT NOT NULL,
+                        `sonido` TEXT NOT NULL
 
 					);";
 			$result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.

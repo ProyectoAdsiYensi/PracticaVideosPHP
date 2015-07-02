@@ -5,7 +5,7 @@
 	if (!empty($_REQUEST['action'])){
 		$accion = $_REQUEST['action'];
 		if($accion == 'crear'){
-			crearAutomovil();
+			crearPosts();
 		}else if ($accion == 'ver'){
 			verAutomovil();
 		}else if ($accion == 'update'){
@@ -19,7 +19,6 @@
 	function crearPosts(){
 		/* Proteccion de Datos */
 		$params = array(
-			':utc' => $_POST['utc'],
 			':anio' => $_POST['anio'],
 			':mes' => $_POST['mes'],
 			':dia' => $_POST['dia'],
@@ -33,16 +32,16 @@
 			':texto' => $_POST['texto'],
 			':imagen' => $_POST['imagen'],
 			':video' => $_POST['video'],
-			':sonido' => $_POST['sonido'],
+			':sonido' => $_POST['sonido']
 			
 
 		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO 
-					Posts (utc,anio,mes,dia,hora,minuto,segundo,usuario,titulo,subtitulo,icono,texto,imagen,video,sonido)
+					Posts (anio,mes,dia,hora,minuto,segundo,usuario,titulo,subtitulo,icono,texto,imagen,video,sonido)
 				VALUES
-					(:utc,:anio,:mes,:dia,:hora,:minuto,:segundo,:usuario,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
+					(:anio,:mes,:dia,:hora,:minuto,:segundo,:usuario,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
 
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
@@ -59,7 +58,6 @@
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				echo "<tr>";
-				echo "    <td>".$value['idutc']."</td>";
 				echo "    <td>".$value['anio']."</td>";
 				echo "    <td>".$value['mes']."</td>";
 				echo "    <td>".$value['dia']."</td>";

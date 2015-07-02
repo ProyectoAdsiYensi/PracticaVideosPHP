@@ -16,6 +16,7 @@
 
 	}
 
+
 	function crearUsuario(){
 		/* Proteccion de Datos */
 		$params = array(
@@ -39,9 +40,9 @@
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
 		if ($result > 0){
-			//header('Location: viewUsers.php?result=true');
+			header('Location: viewUsers.php?result=true');
 		}else{
-			//header('Location: addUser.php?result=false');
+			header('Location: addUser.php?result=false');
 		}
 	}					
 

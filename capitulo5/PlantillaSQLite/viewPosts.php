@@ -1,4 +1,4 @@
-<?php require_once "crudAutomoviles.php"; ?>
+<?php require_once "crudPosts.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Administracion <small>de Automoviles</small>
+                            Administracion <small>de Posts</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -78,7 +78,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-car fa-fw"></i> Automoviles</h3>
+                                <h3 class="panel-title"><i class="fa fa-car fa-fw"></i> Posts</h3>
                             </div>
                             <div class="panel-body">
                                 
@@ -86,16 +86,25 @@
                             <thead>
                                 <tr>
                                     <th data-column-id="id" data-align="left" data-width="40px" data-type="numeric" data-order="asc">ID</th>
-                                    <th data-column-id="marca" data-width="25%" data-align="left" data-header-align="center">marca</th>
-                                    <th data-column-id="modelo" data-width="25%">Modelo</th>
-                                    <th data-column-id="color" data-width="20%">Color</th>
-                                    <th data-column-id="placa" data-width="100px">Placa</th>
-                                    <th data-column-id="estado" data-width="100px">Estado</th>
+                                    <th data-column-id="anio" data-width="25%" data-align="left" data-header-align="center">anio</th>
+                                    <th data-column-id="mes" data-width="25%">mes</th>
+                                    <th data-column-id="dia" data-width="20%">dia</th>
+                                    <th data-column-id="hora" data-width="100px">hora</th>
+                                    <th data-column-id="minuto" data-width="100px">minuto</th>
+                                    <th data-column-id="segundo" data-width="100px">segundo</th>
+                                    <th data-column-id="usuario" data-width="100px">usuario</th>
+                                    <th data-column-id="titulo" data-width="100px">titulo</th>
+                                    <th data-column-id="subtitulo" data-width="100px">subtitulo</th>
+                                    <th data-column-id="icono" data-width="100px">icono</th>
+                                    <th data-column-id="texto" data-width="100px">texto</th>
+                                    <th data-column-id="imagen" data-width="100px">imagen</th>
+                                    <th data-column-id="video" data-width="100px">video</th>
+                                    <th data-column-id="sonido" data-width="100px">sonido</th>
                                     <th data-column-id="actions" align="center" data-formatter="actions" data-width="100px">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php echo verAutomovil(); ?>
+                                <?php echo verPosts(); ?>
                             </tbody>
                         </table>
 
@@ -103,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <a type="button" href="addAutomovil.php" class="btn btn-primary pull-right"><i class="fa fa-plus fa-fw"></i> Agregar</a>
+                <a type="button" href="addPosts.php" class="btn btn-primary pull-right"><i class="fa fa-plus fa-fw"></i> Agregar</a>
 
                 
 

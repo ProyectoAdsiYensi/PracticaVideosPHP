@@ -35,6 +35,7 @@
 						`hora`	INTEGER NOT NULL,
 						`minuto` INTEGER NOT NULL,
                         `segundo` INTEGER NOT NULL,
+                        `usuario` TEXT NOT NULL,
                         `titulo` INTEGER NOT NULL,
                         `subtitulo` INTEGER NOT NULL,
                         `icono` INTEGER NOT NULL,

@@ -26,6 +26,7 @@
 			':hora' => $_POST['hora'],
 			':minuto' => $_POST['minuto'],
 			':segundo' => $_POST['segundo'],
+			':usuario' => $_POST['usuario'],
 			':titulo' => $_POST['titulo'],
 			':subtitulo' => $_POST['subtitulo'],
 			':icono' => $_POST['icono'],
@@ -39,9 +40,9 @@
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO 
-					Posts (utc,anio,mes,dia,hora,minuto,segundo,titulo,subtitulo,icono,texto,imagen,video,sonido)
+					Posts (utc,anio,mes,dia,hora,minuto,segundo,usuario,titulo,subtitulo,icono,texto,imagen,video,sonido)
 				VALUES
-					(:utc,:anio,:mes,:dia,:hora,:minuto,:segundo,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
+					(:utc,:anio,:mes,:dia,:hora,:minuto,:segundo,:usuario,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
 
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
@@ -52,18 +53,28 @@
 		}
 	}
 
-	function verAutomovil (){
-		$query = "SELECT * FROM Automovil";
+	function verPosts(){
+		$query = "SELECT * FROM Posts";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				echo "<tr>";
-				echo "    <td>".$value['idAutomovil']."</td>";
-				echo "    <td>".$value['Marca']."</td>";
-				echo "    <td>".$value['Modelo']."</td>";
-				echo "    <td>".$value['Color']."</td>";
-				echo "    <td>".$value['Placa']."</td>";
-				echo "    <td>".$value['Estado']."</td>";
+				echo "    <td>".$value['idutc']."</td>";
+				echo "    <td>".$value['anio']."</td>";
+				echo "    <td>".$value['mes']."</td>";
+				echo "    <td>".$value['dia']."</td>";
+				echo "    <td>".$value['hora']."</td>";
+				echo "    <td>".$value['minuto']."</td>";
+				echo "    <td>".$value['segundo']."</td>";
+				echo "    <td>".$value['usuario']."</td>";
+				echo "    <td>".$value['titulo']."</td>";
+				echo "    <td>".$value['subtitulo']."</td>";
+				echo "    <td>".$value['icono']."</td>";
+                echo "    <td>".$value['texto']."</td>";
+				echo "    <td>".$value['imagen']."</td>";
+				echo "    <td>".$value['video']."</td>";
+				echo "    <td>".$value['sonido']."</td>";
+
 				echo "</tr>";
 			}
 		}else{

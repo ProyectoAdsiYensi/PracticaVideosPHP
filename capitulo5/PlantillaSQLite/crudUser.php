@@ -97,7 +97,7 @@
 			':Descripcion' => $_POST['Descripcion'],
 			':foto' => $_POST['foto'],
 			':WebPersonal' => $_POST['WebPersonal'],
-			':Email' => $_POST['Email'],
+			':Email' => $_POST['Email']
 		);
 
 		/* Preparamos el query apartir del array $params*/

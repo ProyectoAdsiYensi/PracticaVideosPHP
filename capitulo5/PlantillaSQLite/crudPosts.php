@@ -135,9 +135,9 @@
 		if ($result > 0){
 			unset($_SESSION['idutc']);
 			$_SESSION['idutc'] = NULL;
-			header('Location: viewAutomoviles.php?result=true');
+			header('Location: viewPosts.php?result=true');
 		}else{
-			header('Location: editAutomovil.php?result=false');
+			header('Location: editPosts.php?result=false');
 		}
 	}
 

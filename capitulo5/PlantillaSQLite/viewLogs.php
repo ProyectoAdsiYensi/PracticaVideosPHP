@@ -140,8 +140,8 @@
                 formatters: {
                     "actions": function(column, row)
                     {
-                        return "<a href=\"editAutomovil.php?id="+row.id+"\"><i class='fa fa-pencil fa-fw'></i></a> "+
-                        " <a href=\"crudAutomoviles.php?id="+row.id+"&action=delete\"><i class='fa fa-minus-circle fa-fw'></i></a>";
+                        return "<a href=\"editLogs.php?id="+row.id+"\"><i class='fa fa-pencil fa-fw'></i></a> "+
+                        " <a href=\"crudLogs.php?id="+row.id+"&action=delete\"><i class='fa fa-minus-circle fa-fw'></i></a>";
                     }
                 },
                 rowCount: [-1, 25, 50, 75]

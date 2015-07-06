@@ -1,5 +1,5 @@
 <?php
-require_once "crudAutomoviles.php"; 
+require_once "crudPosts.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -183,8 +183,8 @@ require_once "crudAutomoviles.php";
                 <?php }else{ ?>
 
                 <?php
-                    $_SESSION['idAutomovil'] = $_GET['id'];
-                    $arrAutomovil = getAutomovil($_SESSION['idAutomovil']);
+                    $_SESSION['idutc'] = $_GET['id'];
+                    $arrAutomovil = getPosts($_SESSION['idutc']);
                 ?>
                 <div class="row">
                     <div class="col-lg-8">

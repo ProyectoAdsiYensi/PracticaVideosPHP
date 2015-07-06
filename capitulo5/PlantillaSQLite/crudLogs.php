@@ -5,18 +5,18 @@
 	if (!empty($_REQUEST['action'])){
 		$accion = $_REQUEST['action'];
 		if($accion == 'crear'){
-			crearPosts();
+			crearlogs();
 		}else if ($accion == 'ver'){
-			verAutomovil();
+			verlogs();
 		}else if ($accion == 'update'){
-			updateAutomovil();
+			updatelogs();
 		}else if ($accion == 'delete'){
-			deleteAutomovil();
+			deletelogs();
 		}
 
 	}
 
-	function crearPosts(){
+	function crearlogs(){
 		/* Proteccion de Datos */
 		$params = array(
 			':anio' => $_POST['anio'],
@@ -25,35 +25,31 @@
 			':hora' => $_POST['hora'],
 			':minuto' => $_POST['minuto'],
 			':segundo' => $_POST['segundo'],
+			':ip' => $_POST['ip'],
+			':navegador' => $_POST['navegador'],
 			':usuario' => $_POST['usuario'],
-			':titulo' => $_POST['titulo'],
-			':subtitulo' => $_POST['subtitulo'],
-			':icono' => $_POST['icono'],
-			':texto' => $_POST['texto'],
-			':imagen' => $_POST['imagen'],
-			':video' => $_POST['video'],
-			':sonido' => $_POST['sonido']
-			
+			':operacion' => $_POST['operacion'],
+			 		
 
 		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO 
-					Posts (anio,mes,dia,hora,minuto,segundo,usuario,titulo,subtitulo,icono,texto,imagen,video,sonido)
+					Logs (anio,mes,dia,hora,minuto,segundo,ip,navegador,usuario,operacion)
 				VALUES
-					(:anio,:mes,:dia,:hora,:minuto,:segundo,:usuario,:titulo,:subtitulo,:icono,:texto,:imagen,:video,:sonido)';
+					(:anio,:mes,:dia,:hora,:minuto,:segundo,:ip,:navegador,:usuario,:operacion)';
 
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
 		if ($result > 0){
-			header('Location: viewPosts.php?result=true');
+			header('Location: viewLogs.php?result=true');
 		}else{
-			header('Location: addPosts.php?result=false');
+			header('Location: addLogs.php?result=false');
 		}
 	}
 
-	function verPosts(){
-		$query = "SELECT * FROM Posts";
+	function verLogs(){
+		$query = "SELECT * FROM Logs";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
@@ -64,24 +60,19 @@
 				echo "    <td>".$value['hora']."</td>";
 				echo "    <td>".$value['minuto']."</td>";
 				echo "    <td>".$value['segundo']."</td>";
+				echo "    <td>".$value['ip']."</td>";
+				echo "    <td>".$value['navegador']."</td>";
 				echo "    <td>".$value['usuario']."</td>";
-				echo "    <td>".$value['titulo']."</td>";
-				echo "    <td>".$value['subtitulo']."</td>";
-				echo "    <td>".$value['icono']."</td>";
-                echo "    <td>".$value['texto']."</td>";
-				echo "    <td>".$value['imagen']."</td>";
-				echo "    <td>".$value['video']."</td>";
-				echo "    <td>".$value['sonido']."</td>";
-
-				echo "</tr>";
+				echo "    <td>".$value['operacion']."</td>";
+                echo "</tr>";
 			}
 		}else{
 			echo "No se encontraron resultados";
 		}
 	}
 
-	function getPosts($id){
-		$query = "SELECT * FROM Posts WHERE idutc = '".$id."'";
+	function getLogs($id){
+		$query = "SELECT * FROM Logs WHERE idutc = '".$id."'";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
@@ -92,7 +83,7 @@
 		}
 	}
 
-	function updatePosts (){
+	function updateLogs (){
 
 		/* Proteccion de Datos */
 		$params = array(
@@ -103,14 +94,11 @@
 			':hora' => $_POST['hora'],
 			':minuto' => $_POST['minuto'],
 			':segundo' => $_POST['segundo'],
+			':ip' => $_POST['ip'],
+			':navegador' => $_POST['navegador'],
 			':usuario' => $_POST['usuario'],
-			':titulo' => $_POST['titulo'],
-			':subtitulo' => $_POST['subtitulo'],
-			':icono' => $_POST['icono'],
-			':texto' => $_POST['texto'],
-			':imagen' => $_POST['imagen'],
-			':video' => $_POST['video'],
-			':sonido' => $_POST['sonido']
+			':operacion' => $_POST['operacion']
+			
 		);
 
 		/* Preparamos el query apartir del array $params*/
@@ -120,14 +108,10 @@
 					hora = :hora,
 					minuto = :minuto,
 					segundo = :segundo,
-                    usuario  =:usuario,
-                    titulo=:titulo,
-                    subtitulo=:subtitulo,
-                    icono=icono,
-                    texto=:texto,
-                    imagen=:imagen,
-                    video=:video,
-                    sonido=:sonido
+                    ip  =:ip,
+                    navegador=:navegador,
+                    usuario=:usuario,
+                    operacion=operacion
 				 WHERE idutc= :idutc;
 				';
 
@@ -135,13 +119,13 @@
 		if ($result > 0){
 			unset($_SESSION['idutc']);
 			$_SESSION['idutc'] = NULL;
-			header('Location: viewAutomoviles.php?result=true');
+			header('Location: viewLogs.php?result=true');
 		}else{
-			header('Location: editAutomovil.php?result=false');
+			header('Location: editLogs.php?result=false');
 		}
 	}
 
-	function deletePosts (){
+	function deleteLogs(){
 
 		$idutc = $_GET['id'];
 
@@ -156,9 +140,9 @@
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
 		if ($result > 0){
-			header('Location: viewPosts.php?result=true');
+			header('Location: viewLogs.php?result=true');
 		}else{
-			header('Location: viewPosts.php?result=false');
+			header('Location: viewLogs.php?result=false');
 		}
 	}
 

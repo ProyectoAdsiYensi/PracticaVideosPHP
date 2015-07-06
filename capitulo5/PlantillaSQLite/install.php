@@ -63,7 +63,7 @@
                         `ip` TEXT NOT NULL,
                         `navegador` TEXT NOT NULL,
                         `usuario` TEXT NOT NULL,
-                        `operacion` TEXT NOT NULL,
+                        `operacion` TEXT NOT NULL
   					);";
 			$result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.
 			echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla logs."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla logs."."<br/>";

@@ -54,6 +54,7 @@
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				echo "<tr>";
+				echo "    <td>".$value['idutc']."</td>";
 				echo "    <td>".$value['anio']."</td>";
 				echo "    <td>".$value['mes']."</td>";
 				echo "    <td>".$value['dia']."</td>";

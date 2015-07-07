@@ -39,7 +39,7 @@
 
 		    /* Creacion de la tabla posts */
 		    $query = "CREATE TABLE `Posts` (
-						`idposts`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+						`idpost`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 						`anio`	INTEGER NOT NULL,
 						`mes`	INTEGER NOT NULL,
 						`dia`	INTEGER NOT NULL,

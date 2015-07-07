@@ -58,6 +58,7 @@
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				echo "<tr>";
+				echo "    <td>".$value['idpost']."</td>";
 				echo "    <td>".$value['anio']."</td>";
 				echo "    <td>".$value['mes']."</td>";
 				echo "    <td>".$value['dia']."</td>";
@@ -81,7 +82,7 @@
 	}
 
 	function getPosts($id){
-		$query = "SELECT * FROM Posts WHERE idposts = '".$id."'";
+		$query = "SELECT * FROM Posts WHERE idpost = '".$id."'";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
@@ -96,7 +97,7 @@
 
 		/* Proteccion de Datos */
 		$params = array(
-			':idutc' => $_SESSION['idutc'],
+			':idpost' => $_SESSION['idpost'],
 			':anio' => $_POST['anio'],
 			':mes' => $_POST['mes'],
 			':dia' => $_POST['dia'],
@@ -117,6 +118,7 @@
 		$query ='UPDATE Posts SET
 					anio = :anio,
 					mes = :mes,
+					dia = :dia,
 					hora = :hora,
 					minuto = :minuto,
 					segundo = :segundo,
@@ -128,13 +130,15 @@
                     imagen=:imagen,
                     video=:video,
                     sonido=:sonido
-				 WHERE idposts= :idutc;
+
+				 WHERE idpost= :idpost;
 				';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
 		if ($result > 0){
-			unset($_SESSION['idutc']);
-			$_SESSION['idutc'] = NULL;
+			unset($_SESSION['idpost']);
+			$_SESSION['idpost'] = NULL;
+
 			header('Location: viewPosts.php?result=true');
 		}else{
 			header('Location: editPosts.php?result=false');
@@ -143,7 +147,7 @@
 
 	function deletePosts (){
 
-		$idutc = $_GET['id'];
+		$idpost = $_GET['id'];
 
 		/* Proteccion de Datos */
 		$params = array(
@@ -152,7 +156,7 @@
 
 		/* Preparamos el query apartir del array $params*/
 		$query ='DELETE FROM Posts
-				 WHERE idposts = :id;';
+				 WHERE idpost = :id;';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
 		if ($result > 0){

@@ -176,7 +176,7 @@
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmUser" method="post" action="crudConfigUsuario.php?action=crear">
+                        <form role="form" id="frmUser" method="post" action="crudConfigUsuaurio.php?action=crear">
                             <div class="form-group">
                                 <label>Usuario</label>
                                 <input id="Usuario" name="Usuario" class="form-control" placeholder="Juliet">

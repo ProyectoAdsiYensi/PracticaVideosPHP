@@ -11,11 +11,12 @@
                         <a href="viewPosts.php"><i class="fa fa-fw fa-table"></i> Posts</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="viewLogs.php"><i class="fa fa-fw fa-edit"></i> Logs</a>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="viewconfigusuarios.php"><i class="fa fa-fw fa-desktop"></i> Configuracion Usuarios</a>
                     </li>
+                    <!--
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
@@ -25,5 +26,6 @@
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
+                -->
                 </ul>
             </div>

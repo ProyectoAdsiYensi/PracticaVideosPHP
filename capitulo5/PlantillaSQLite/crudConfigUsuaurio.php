@@ -11,7 +11,7 @@
 		}else if ($accion == 'update'){
 			updateConfigUsuario();
 		}else if ($accion == 'delete'){
-			deleteConfigUseario();
+			deleteConfigUsuario();
 		}
 
 	}
@@ -58,7 +58,7 @@
 	}
 
 	function getConfigUsuarios($id){
-		$query = "SELECT * FROM rConfigUsuarios WHERE idconfigusuarios = '".$id."'";
+		$query = "SELECT * FROM ConfigUsuarios WHERE idconfigusuarios = '".$id."'";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
@@ -91,13 +91,13 @@
 		if ($result > 0){
 			unset($_SESSION['idconfigusuarios']);
 			$_SESSION['idconfigusuarios'] = NULL;
-			header('Location: viewConfigUsuario.php?result=true');
+			header('Location: viewconfigusuarios.php?result=true');
 		}else{
-			header('Location: editConfigUsuario.php?result=false');
+			header('Location: editconfigusuarios.php?result=false');
 		}
 	}
 
-	function deleteConfigUseario (){
+	function deleteConfigUsuario (){
 
 		$idUser = $_GET['id'];
 
@@ -107,14 +107,14 @@
 		);
 
 		/* Preparamos el query apartir del array $params*/
-		$query ='DELETE FROM ConfigUseario
+		$query ='DELETE FROM Configusuarios 
 				 WHERE idconfigusuarios = :id;';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
 		if ($result > 0){
-			header('Location: viewConfigUsuario.php?result=true');
+			header('Location: viewconfigusuarios.php?result=true');
 		}else{
-			header('Location: viewConfigUsuario.php?result=false');
+			header('Location: viewconfigusuario.php?result=false');
 		}
 	}
 

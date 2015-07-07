@@ -81,7 +81,7 @@
 	}
 
 	function getPosts($id){
-		$query = "SELECT * FROM Posts WHERE idutc = '".$id."'";
+		$query = "SELECT * FROM Posts WHERE idposts = '".$id."'";
 		$result = newQuery("Usuarios", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
@@ -128,7 +128,7 @@
                     imagen=:imagen,
                     video=:video,
                     sonido=:sonido
-				 WHERE idutc= :idutc;
+				 WHERE idposts= :idutc;
 				';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
@@ -152,13 +152,13 @@
 
 		/* Preparamos el query apartir del array $params*/
 		$query ='DELETE FROM Posts
-				 WHERE idutc = :id;';
+				 WHERE idposts = :id;';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);
 		if ($result > 0){
 			header('Location: viewPosts.php?result=true');
 		}else{
-			header('Location: viewPosts.php?result=false');
+			header('Location: viewPost.php?result=false');
 		}
 	}
 

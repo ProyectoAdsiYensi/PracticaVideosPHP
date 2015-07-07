@@ -189,89 +189,89 @@ require_once "crudPosts.php";
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmEditPosts" method="post" action="crudPosts.php?action=update">
+                        <form role="form" id="frmPosts" method="post" action="crudPosts.php?action=update">
                             
                             <div class="form-group">
                                 <label>Año</label>
-                                <input id="anio" name="anio" class="form-control" placeholder="2015">
+                                <input id="anio" name="anio" class="form-control" value="<?php echo $arrPosts['anio']; ?>" placeholder="2015">
                                 <p class="help-block">Año</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Mes</label>
-                                <input id="mes" name="mes" class="form-control" placeholder="06">
+                                <input id="mes" name="mes" class="form-control" value="<?php echo $arrPosts['mes']; ?>" placeholder="06">
                                 <p class="help-block">Mes</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Dia</label>
-                                <input id="dia" name="dia" class="form-control" placeholder="15">
+                                <input id="dia" name="dia" class="form-control" value="<?php echo $arrPosts['dia']; ?>"  placeholder="15">
                                 <p class="help-block">Dia</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Hora</label>
-                                <input id="hora" name="hora" class="form-control" placeholder="02:30 pm">
+                                <input id="hora" name="hora" class="form-control" value="<?php echo $arrPosts['hora']; ?>"  placeholder="02:30 pm">
                                 <p class="help-block">Hora</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Minuto</label>
-                                <input id="minuto" name="minuto" class="form-control" placeholder="11">
+                                <input id="minuto" name="minuto" class="form-control"  value="<?php echo $arrPosts['minuto']; ?>" placeholder="11">
                                 <p class="help-block">Minuto</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Segundo</label>
-                                <input id="segundo" name="segundo" class="form-control" placeholder="55">
+                                <input id="segundo" name="segundo" class="form-control" value="<?php echo $arrPosts['segundo']; ?>" placeholder="55">
                                 <p class="help-block">Segundo</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Usuario</label>
-                                <input id="usuario" name="usuario" class="form-control" placeholder="julieth">
+                                <input id="usuario" name="usuario" class="form-control" value="<?php echo $arrPosts['usuario']; ?>" placeholder="julieth">
                                 <p class="help-block">Usuario</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Titulo</label>
-                                <input id="titulo" name="titulo" class="form-control" placeholder="post">
+                                <input id="titulo" name="titulo" class="form-control" value="<?php echo $arrPosts['titulo']; ?>" placeholder="post">
                                 <p class="help-block">Titulo</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Subtitulo</label>
-                                <input id="subtitulo" name="subtitulo" class="form-control" placeholder="primer posts">
+                                <input id="subtitulo" name="subtitulo" class="form-control" value="<?php echo $arrPosts['subtitulo']; ?>" placeholder="primer posts">
                                 <p class="help-block">Subtitulo</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Icono</label>
-                                <input id="icono" name="icono" class="form-control" placeholder="icono">
+                                <input id="icono" name="icono" class="form-control" value="<?php echo $arrPosts['icono']; ?>" placeholder="icono">
                                 <p class="help-block">Icono</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Texto</label>
-                                <input id="texto" name="texto" class="form-control" placeholder="texto">
+                                <input id="texto" name="texto" class="form-control" value="<?php echo $arrPosts['texto']; ?>" placeholder="texto">
                                 <p class="help-block">Texto</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Imagen</label>
-                                <input id="imagen" name="imagen" class="form-control" placeholder="imagen">
+                                <input id="imagen" name="imagen" class="form-control" value="<?php echo $arrPosts['imagen']; ?>" placeholder="imagen">
                                 <p class="help-block">Imagen</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Video</label>
-                                <input id="video" name="video" class="form-control" placeholder="video">
+                                <input id="video" name="video" class="form-control" value="<?php echo $arrPosts['video']; ?>" placeholder="video">
                                 <p class="help-block">Video</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Sonido</label>
-                                <input id="sonido" name="sonido" class="form-control" placeholder="sonido">
+                                <input id="sonido" name="sonido" class="form-control" value="<?php echo $arrPosts['sonido']; ?>" placeholder="sonido">
                                 <p class="help-block">Sonido</p>
                             </div>                     
                             <button type="submit" class="btn btn-default">Enviar</button>

@@ -90,6 +90,8 @@
 		/* Proteccion de Datos */
 		$params = array(
 			':idUser' => $_SESSION['idUser'],
+			':Usuario' => $_POST['Usuario'],
+			':Contrasena' => $_POST['Contrasena'],
 			':Nombres' => $_POST['Nombres'],
 			':Apellidouno' => $_POST['Apellidouno'],
 			':Apellidodos' => $_POST['Apellidodos'],
@@ -102,7 +104,9 @@
 
 		/* Preparamos el query apartir del array $params*/
 		$query ='UPDATE Usuarios SET
-					Nombres = :Nombres,
+                    Usuario = :Usuario,
+                    Contrasena = :Contrasena,
+		         	Nombres = :Nombres,
 					Apellidouno = :Apellidouno,
 					Apellidodos = :Apellidodos,
 					Titulo = :Titulo,

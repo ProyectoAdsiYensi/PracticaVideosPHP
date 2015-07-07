@@ -193,6 +193,17 @@ require_once "crudUser.php";
 
                         <form role="form" id="frmUser" method="post" action="crudUser.php?action=update">
                             <div class="form-group">
+
+                            <label>Usuario</label>
+                                <input id="Usuario" name="Usuario" class="form-control" value="<?php echo $arrUser['Usuario']; ?>" placeholder="Usuario">
+                                <p class="help-block">usuario.</p>
+                            </div>
+
+                             <label>Contrasena</label>
+                                <input id="Contrasena" name="Contrasena" class="form-control" value="<?php echo $arrUser['Contrasena']; ?>" placeholder="Contrasena">
+                                <p class="help-block">Contrasena del usuario.</p>
+                            </div>
+
                                 <label>Nombres</label>
                                 <input id="nombres" name="nombres" class="form-control" value="<?php echo $arrUser['Nombres']; ?>" placeholder="Nombres Usuario">
                                 <p class="help-block">Nombres completos del usuario.</p>

@@ -26,6 +26,18 @@
 		    $result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.
 		    echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Usuarios."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla Usuarios."."<br/>";
 
+
+/* Creacion de la tabla ConfigUsuarios */
+		    $query = "CREATE TABLE 'Configusuarios' (
+						'idconfigusuarios'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+						'usuario'	TEXT NOT NULL,
+						'piel'	TEXT NOT NULL,
+						'respuestas'	TEXT NOT NULL
+					);"; //Creacion del query para crear la tabla.
+		    $result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.
+		    echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Usuarios."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla ConfigUsuarios."."<br/>";
+
+
 		    /* Creacion de la tabla posts */
 		    $query = "CREATE TABLE `Posts` (
 						`idutc`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,

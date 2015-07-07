@@ -45,108 +45,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">SB Admin</a>
             </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
+             <?php include_once "menuItems.php"; ?>
              <?php include_once "menu.php"; ?>
             <!-- /.navbar-collapse -->
         </nav>
@@ -179,68 +78,57 @@
                         <form role="form" id="frmUser" method="post" action="crudUser.php?action=crear">
                             <div class="form-group">
                                 <label>Usuario</label>
-                                <input id="Usuario" name="Usuario" class="form-control" placeholder="Juliet">
-                                <p class="help-block">usuario de ingreso.</p>
+                                <input id="usuario" name="usuario" class="form-control" placeholder="julieth">
+                                <p class="help-block">Ingrese un nuevo ususario.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Contraseña</label>
-                                <input id="Contrasena" name="Contrasena" class="form-control" placeholder="#####">
-                                <p class="help-block">contraseña de ingreso.</p>
+                                <label>Clave</label>
+                                <input id="contrasena" name="contrasena" class="form-control" placeholder="******">
+                                <p class="help-block">Ingrese una nueva clave.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Nombres</label>
-                                <input id="Nombres" name="Nombres" class="form-control" placeholder="Yensi Juliet">
-                                <p class="help-block">Nombre del usuario.</p>
+                                <label>nombre</label>
+                                <input id="nombre" name="nombre" class="form-control" placeholder="yensi julieth">
+                                <p class="help-block">Digite su nombre.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Apellidouno</label>
-                                <input id="Apellidouno" name="Apellidouno" class="form-control" placeholder="Granados">
-                                <p class="help-block">Apellido del usuario.</p>
+                                <label>Primer apellido</label>
+                                <input id="apellidouno" name="apellidouno" class="form-control" placeholder="granados">
+                                <p class="help-block">Digite su primer apellido.</p>
                             </div>
 
-         
                              <div class="form-group">
-                                <label>Apellidodos</label>
-                                <input id="Apellidodos" name="Apellidodos" class="form-control" placeholder="Gonzalez">
-                                <p class="help-block"> Segundo apellido del usuario.</p>
-                            </div>
+                                <label>Segundo apellido</label>
+                                <input id="apellidodos" name="apellidodos" class="form-control" placeholder="gonzalez ">
+                                <p class="help-block">Digite su segundo apellido.</p>
+                             </div>
 
-                              <div class="form-group">
+                             <div class="form-group">
                                 <label>Titulo</label>
-                                <input id="Titulo" name="Titulo" class="form-control" placeholder="El sena">
-                                <p class="help-block">Titulo a ingresar.</p>
+                                <input id="titulo" name="titulo" class="form-control" placeholder="mi pagina">
+                                <p class="help-block">Tigite un titulo.</p>
                             </div>
 
-                              <div class="form-group">
+                            <div class="form-group">
                                 <label>Descripcion</label>
-                                <input id="Descripcion" name="Descripcion" class="form-control" placeholder="genera mas trabajo">
-                                <p class="help-block">Descripcion de tema.</p>
+                                <input id="descripcion" name="descripcion" class="form-control" placeholder="es de tipo web  ">
+                                <p class="help-block">Agrege una descripcion.</p>
                             </div>
 
-                              <div class="form-group">
-                                <label>foto</label>
-                                <input id="foto" name="foto" class="form-control" placeholder="foto foto">
-                                <p class="help-block">Foto a ingresar.</p>
+                            <div class="form-group">
+                                <label>Foto</label>
+                                <input id="foto" name="foto" class="form-control" placeholder="foto">
+                                <p class="help-block">Ingrese un nombre de una foto.</p>
                             </div>
 
-
-                              <div class="form-group">
-                                <label>WebPersonal</label>
-                                <input id="WebPersonal" name="WebPersonal" class="form-control" placeholder="www.blogspotyensi.com....">
-                                <p class="help-block">.</p>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input id="email" name="email" class="form-control" placeholder="julieth@....">
+                                <p class="help-block">Digite su correo electronico.</p>
                             </div>
-
-
-                              <div class="form-group">
-                                <label>Email</label>
-                                <input id="Email" name="Email" class="form-control" placeholder="julieth_96@gmail.com">
-                                <p class="help-block">Direccion correo electronico .</p>
-                            </div>
-
-
 
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>

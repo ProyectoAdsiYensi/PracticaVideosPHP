@@ -12,16 +12,15 @@
 		    /* Creacion de la tabla Usuarios */
 		    $query = "CREATE TABLE 'Usuarios' (
 						'idUsuario'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-						'Usuario'	TEXT NOT NULL,
-						'Contrasena'	TEXT NOT NULL,
-						'Nombres'	TEXT NOT NULL,
-						'Apellidouno'	TEXT NOT NULL,
-						'Apellidodos'	TEXT NOT NULL,
-						'Titulo'	TEXT NOT NULL,
-						'Descripcion'	TEXT NOT NULL,
+						'usuario'	TEXT NOT NULL,
+						'contrasena'	TEXT NOT NULL,
+						'nombre'	TEXT NOT NULL,
+						'apellidouno'	TEXT NOT NULL,
+						'apellidodos'	TEXT NOT NULL,
+						'titulo'	TEXT NOT NULL,
+						'descripcion'	TEXT NOT NULL,
 						'foto'	TEXT NOT NULL,
-						'WebPersonal'	TEXT NOT NULL,
-						'Email'	TEXT NOT NULL
+						'email'	TEXT NOT NULL
 					);"; //Creacion del query para crear la tabla.
 		    $result = $db->exec($query); //Ejecutamos el query. Se usa exec para todos los casos excepto para los select.
 		    echo ($result === false) ? "<i class='fa fa-times-circle'></i> No se pudo crear la Tabla Usuarios."."<br/>" : "<i class='fa fa-check-square-o'></i> Se creo correctamente la Tabla Usuarios."."<br/>";

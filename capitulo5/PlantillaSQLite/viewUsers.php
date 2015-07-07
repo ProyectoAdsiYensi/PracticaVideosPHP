@@ -47,93 +47,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Admin Users</a>
             </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Diego Ojeada</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Ayer a las 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Diego Ojeda</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Ayer a las 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Leer Todos Los Mensajes</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Nueva<span class="label label-default">Alert Default</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Nueva <span class="label label-primary">Alert Primary</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Nueva <span class="label label-success">Alert Success</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Nueva <span class="label label-info">Alert Info</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Nueva <span class="label label-warning">Alert Warning</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Nueva <span class="label label-danger">Alert Danger</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">Ver Todas</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Diego Ojeda <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensajes</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Config</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Salir</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
+            <?php include_once "menuItems.php"; ?>
             <?php include_once "menu.php"; ?>
 
             <!-- /.navbar-collapse -->
@@ -170,19 +84,16 @@
                             <thead>
                                 <tr>
                                     <th data-column-id="id" data-align="left" data-width="40px" data-type="numeric" data-order="asc">ID</th>
-                                    <th data-column-id="Usuario" data-width="25%" data-align="left" data-header-align="center">Usuario</th>
-                                    <th data-column-id="Contrasena" data-width="25%">Contraseña</th>
-                                    <th data-column-id="Nombres" data-width="20%">Nombres</th>
-                                    <th data-column-id="Apellidouno" data-width="100px">Apellidouno</th>
-                                    <th data-column-id="Apellidodos" data-width="100px">Apellidodos</th>
-                                    <th data-column-id="Titulo" data-width="100px">Titulo</th>
-                                    <th data-column-id="Descripcion" data-width="100px">Descripcion</th>
-                                    <th data-column-id="foto" data-width="100px">foto</th>                                    
-                                    <th data-column-id="WebPersonal" data-width="100px">WebPersonal</th>
-                                    <th data-column-id="Email" data-width="100px">Email</th>
+                                    <th data-column-id="usuario" data-width="25%">Usuario</th>
+                                    <th data-column-id="contrasena" data-width="20%">Clave</th>
+                                    <th data-column-id="nombre" data-width="100px">Nombre</th>
+                                    <th data-column-id="apellidouno" data-width="100px">Apellidouno</th>
+                                    <th data-column-id="apellidodos" data-width="25%">Apellidodos</th>
+                                    <th data-column-id="titulo" data-width="20%">Titulo</th>
+                                    <th data-column-id="descripcion" data-width="100px">Descripcion</th>
+                                    <th data-column-id="foto" data-width="100px">foto</th>
+                                    <th data-column-id="email" data-width="100px">Email</th>
                                     <th data-column-id="actions" align="center" data-formatter="actions" data-width="100px">Acciones</th>
-
-
                                 </tr>
                             </thead>
                             <tbody>

@@ -48,109 +48,8 @@ require_once "crudUser.php";
                 </button>
                 <a class="navbar-brand" href="index.html">SB Admin</a>
             </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-             <?php include_once "menu.php"; ?>
+           <?php include_once "menuItems.php"; ?>
+            <?php include_once "menu.php"; ?>
             <!-- /.navbar-collapse -->
         </nav>
 
@@ -176,6 +75,7 @@ require_once "crudUser.php";
                 </div>
                 <!-- /.row -->
 
+
                 <?php if(empty($_GET['id'])){ ?>
                     <div class="alert alert-danger">
                         <strong>Error!</strong> No se encontro un usuario al que aplicar esta accion.
@@ -189,70 +89,62 @@ require_once "crudUser.php";
                 <div class="row">
                     <div class="col-lg-8">
 
-
-
                         <form role="form" id="frmUser" method="post" action="crudUser.php?action=update">
-                            <div class="form-group">
 
-                            <label>Usuario</label>
-                                <input id="Usuario" name="Usuario" class="form-control" value="<?php echo $arrUser['Usuario']; ?>" placeholder="Usuario">
-                                <p class="help-block">usuario.</p>
-                            </div>
-
-                             <label>Contrasena</label>
-                                <input id="Contrasena" name="Contrasena" class="form-control" value="<?php echo $arrUser['Contrasena']; ?>" placeholder="Contrasena">
-                                <p class="help-block">Contrasena del usuario.</p>
-                            </div>
-
-                                <label>Nombres</label>
-                                <input id="nombres" name="nombres" class="form-control" value="<?php echo $arrUser['Nombres']; ?>" placeholder="Nombres Usuario">
-                                <p class="help-block">Nombres completos del usuario.</p>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label>Primer Apellido</label>
-                                <input id="apellidouno" name="apellidouno" class="form-control" value="<?php echo $arrUser['Apellidouno']; ?>" placeholder="Primer Apellido Usuario">
-                                <p class="help-block">Apellido completos del usuario.</p>
+                           <div class="form-group">
+                                <label>Usuario</label>
+                                <input id="usuario" name="usuario" class="form-control" value="<?php echo $arrUser['usuario']; ?>" placeholder="julieth">
+                                <p class="help-block">Ingrese un nuevo ususario.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Segundo Apellido</label>
-                                <input id="apellidodos" name="apellidodos" class="form-control" value="<?php echo $arrUser['Apellidodos']; ?>" placeholder="Segundo Apellido Usuario">
-                                <p class="help-block">Apellido completos del usuario.</p>
+                                <label>Clave</label>
+                                <input id="contrasena" name="contrasena" class="form-control"  value="<?php echo $arrUser['contrasena']; ?>" placeholder="******">
+                                <p class="help-block">Ingrese una nueva clave.</p>
                             </div>
 
+                            <div class="form-group">
+                                <label>nombre</label>
+                                <input id="nombre" name="nombre" class="form-control" value="<?php echo $arrUser['nombre']; ?>" placeholder="yensi julieth">
+                                <p class="help-block">Digite su nombre.</p>
+                            </div>
 
                             <div class="form-group">
+                                <label>Primer apellido</label>
+                                <input id="apellidouno" name="apellidouno" class="form-control"  value="<?php echo $arrUser['apellidouno']; ?>" placeholder="granados">
+                                <p class="help-block">Digite su primer apellido.</p>
+                            </div>
+
+                             <div class="form-group">
+                                <label>Segundo apellido</label>
+                                <input id="apellidodos" name="apellidodos" class="form-control" value="<?php echo $arrUser['apellidodos']; ?>" placeholder="gonzalez">
+                                <p class="help-block">Digite su segundo apellido.</p>
+                             </div>
+
+                             <div class="form-group">
                                 <label>Titulo</label>
-                                <input id="titulo" name="titulo" class="form-control" value="<?php echo $arrUser['Titulo']; ?>" placeholder="Titulo pagina">
-                                <p class="help-block">Titulo pagina  del usuario.</p>
+                                <input id="titulo" name="titulo" class="form-control" value="<?php echo $arrUser['titulo']; ?>" placeholder="mi pagina">
+                                <p class="help-block">Tigite un titulo.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Descipcion</label>
-                                <input id="Descipcion" name="Descipcion" class="form-control" value="<?php echo $arrUser['Descripcion']; ?>" placeholder="Descripcion pagina del Usuario">
-                                <p class="help-block">Descripcion pagina del usuario.</p>
+                                <label>Descripcion</label>
+                                <input id="descripcion" name="descripcion" class="form-control" value="<?php echo $arrUser['descripcion']; ?>" placeholder="es de tipo web ">
+                                <p class="help-block">Agrege una descripcion.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>foto</label>
-                                <input id="foto" name="foto" class="form-control" value="<?php echo $arrUser['foto']; ?>" placeholder="suba su foto aqui">
-                                <p class="help-block">foto del usuario.</p>
+                                <label>Foto</label>
+                                <input id="foto" name="foto" class="form-control" value="<?php echo $arrUser['foto']; ?>" placeholder="foto">
+                                <p class="help-block">Ingrese un nombre de una foto.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>WebPersonal</label>
-                                <input id="WebPersonal" name="WebPersonal" class="form-control" value="<?php echo $arrUser['WebPersonal']; ?>" placeholder="direccion de su pagina web">
-                                <p class="help-block">Direccion pagina del usuario.</p>
+                                <label>Correo</label>
+                                <input id="email" name="email" class="form-control" value="<?php echo $arrUser['email']; ?>" placeholder="julieth@....">
+                                <p class="help-block">Digite su correo electronico.</p>
                             </div>
 
-
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input id="Email" name="Email" class="form-control" value="<?php echo $arrUser['Email']; ?>" placeholder="correo electronico del usuario">
-                                <p class="help-block">Correo electronico del usuario.</p>
-                            </div>
 
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>

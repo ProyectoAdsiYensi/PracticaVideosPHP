@@ -16,27 +16,28 @@
 
 	}
 
-
 	function crearUsuario(){
+		var_dump($_POST);
 		/* Proteccion de Datos */
 		$params = array(
-			':Usuario' => $_POST['Usuario'],
-			':Contrasena' => $_POST['Contrasena'],
-			':Nombres' => $_POST['Nombres'],
-			':Apellidouno' => $_POST['Apellidouno'],
-			':Apellidodos' => $_POST['Apellidodos'],
-            ':Titulo' => $_POST['Titulo'],
-			':Descripcion' => $_POST['Descripcion'],
-            ':foto' => $_POST['foto'],
-	 		':WebPersonal' => $_POST['WebPersonal'],
-            ':Email' => $_POST['Email']
-			);
+			':usuario' => $_POST['usuario'],
+			':contrasena' => $_POST['contrasena'],
+			':nombre' => $_POST['nombre'],
+			':apellidouno' => $_POST['apellidouno'],
+			':apellidodos' => $_POST['apellidodos'],
+			':titulo' => $_POST['titulo'],
+			':descripcion' => $_POST['descripcion'],
+			':foto' => $_POST['foto'],
+			':email'	=> $_POST['email']
+				
+		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO Usuarios 
-					(Usuario, Contrasena, Nombres, Apellidouno, Apellidodos,Titulo,Descripcion,foto,WebPersonal,Email) 
+					(usuario,contrasena, nombre,apellidouno,apellidodos,titulo,descripcion,foto,email) 
 				VALUES 
-                    (:Usuario,:Contrasena,:Nombres,:Apellidouno,:Apellidodos,:Titulo,:Descripcion,:foto,:WebPersonal,:Email)';
+					(:usuario,:contrasena, :nombre,:apellidouno,:apellidodos,:titulo,:descripcion,:foto,:email)';
+
 		/* Ejecutamos el query con los parametros */
 		$result = excuteQuery("Usuarios","", $query, $params);
 		if ($result > 0){
@@ -44,8 +45,7 @@
 		}else{
 			header('Location: addUser.php?result=false');
 		}
-	}					
-
+	}
 
 	function verUsuarios (){
 		$query = "SELECT * FROM Usuarios";
@@ -54,18 +54,16 @@
 			foreach ($result as $value) {
 				echo "<tr>";
 				echo "    <td>".$value['idUsuario']."</td>";
-				echo "    <td>".$value['Usuario']."</td>";
-				echo "    <td>".$value['Contrasena']."</td>";
-				echo "    <td>".$value['Nombres']."</td>";
-				echo "    <td>".$value['Apellidouno']."</td>";
-				echo "    <td>".$value['Apellidodos']."</td>";
-				echo "    <td>".$value['Titulo']."</td>";
-				echo "    <td>".$value['Descripcion']."</td>";
+				echo "    <td>".$value['usuario']."</td>";
+				echo "    <td>".$value['contrasena']."</td>";
+				echo "    <td>".$value['nombre']."</td>";
+				echo "    <td>".$value['apellidouno']."</td>";
+				echo "    <td>".$value['apellidodos']."</td>";
+				echo "    <td>".$value['titulo']."</td>";
+				echo "    <td>".$value['descripcion']."</td>";
 				echo "    <td>".$value['foto']."</td>";
-                echo "    <td>".$value['WebPersonal']."</td>";
-				echo "    <td>".$value['Email']."</td>";
-				//echo "    <td>".$value['Permisos']."</td>";
-
+				echo "    <td>".$value['email']."</td>";
+							
 				echo "</tr>";
 			}
 		}else{
@@ -90,31 +88,29 @@
 		/* Proteccion de Datos */
 		$params = array(
 			':idUser' => $_SESSION['idUser'],
-			':Usuario' => $_POST['Usuario'],
-			':Contrasena' => $_POST['Contrasena'],
-			':Nombres' => $_POST['Nombres'],
-			':Apellidouno' => $_POST['Apellidouno'],
-			':Apellidodos' => $_POST['Apellidodos'],
-			':Titulo' => $_POST['Titulo'],
-			':Descripcion' => $_POST['Descripcion'],
+			':usuario' => $_POST['usuario'],
+			':contrasena' => $_POST['contrasena'],
+			':nombre' => $_POST['nombre'],
+			':apellidouno' => $_POST['apellidouno'],
+			':apellidodos' => $_POST['apellidodos'],
+			':titulo' => $_POST['titulo'],
+			':descripcion' => $_POST['descripcion'],
 			':foto' => $_POST['foto'],
-			':WebPersonal' => $_POST['WebPersonal'],
-			':Email' => $_POST['Email']
-		);
+			':email'	=> $_POST['email']
+			);
 
 		/* Preparamos el query apartir del array $params*/
 		$query ='UPDATE Usuarios SET
-                    Usuario = :Usuario,
-                    Contrasena = :Contrasena,
-		         	Nombres = :Nombres,
-					Apellidouno = :Apellidouno,
-					Apellidodos = :Apellidodos,
-					Titulo = :Titulo,
-					Descripcion = :Descripcion,  
+					usuario = :usuario,
+					contrasena= :contrasena,
+					nombre = :nombre,
+					apellidouno = :apellidouno,
+					apellidodos = :apellidodos,  
+					titulo = :titulo,
+					descripcion= :descripcion,
 					foto = :foto,
-					WebPersonal = :WebPersonal,
-					Email = :Email
-			     WHERE idUsuario = :idUser;
+					email = :email  
+				 WHERE idUsuario = :idUser;
 				';
 
 		$result = excuteQuery("Usuarios", "", $query, $params);

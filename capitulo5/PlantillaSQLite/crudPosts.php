@@ -7,11 +7,11 @@
 		if($accion == 'crear'){
 			crearPosts();
 		}else if ($accion == 'ver'){
-			verAutomovil();
+			verPosts();
 		}else if ($accion == 'update'){
-			updateAutomovil();
+			updatePosts();
 		}else if ($accion == 'delete'){
-			deleteAutomovil();
+			deletePosts();
 		}
 
 	}

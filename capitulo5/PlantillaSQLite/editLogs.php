@@ -1,5 +1,5 @@
 <?php
-require_once "crudPosts.php"; 
+require_once "crudLogs.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ require_once "crudPosts.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Editar - Posts</title>
+    <title>Editar - Logs</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -162,11 +162,11 @@ require_once "crudPosts.php";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Editar Posts
+                            Editar Logs
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Posts</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Logs</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Editar
@@ -184,14 +184,14 @@ require_once "crudPosts.php";
 
                 <?php
                     $_SESSION['idutc'] = $_GET['id'];
-                    $arrPosts = getPosts($_SESSION['idutc']);
+                    $arrLogs = getLogs($_SESSION['idutc']);
                 ?>
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmEditPosts" method="post" action="crudPosts.php?action=update">
+                        <form role="form" id="frmEditLogs" method="post" action="crudLogs.php?action=update">
                             
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label>Año</label>
                                 <input id="anio" name="anio" class="form-control" placeholder="2015">
                                 <p class="help-block">Año</p>
@@ -228,52 +228,28 @@ require_once "crudPosts.php";
                             </div>
 
                             <div class="form-group">
+                                <label>Ip</label>
+                                <input id="ip" name="ip" class="form-control" placeholder="123.465.68">
+                                <p class="help-block">Ip</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Navegador</label>
+                                <input id="navegador" name="navegador" class="form-control" placeholder="Chrome">
+                                <p class="help-block">navegador</p>
+                            </div>
+
+                            <div class="form-group">
                                 <label>Usuario</label>
-                                <input id="usuario" name="usuario" class="form-control" placeholder="julieth">
-                                <p class="help-block">Usuario</p>
+                                <input id="usuario" name="usuario" class="form-control" placeholder="@julieth">
+                                <p class="help-block">usuario</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Titulo</label>
-                                <input id="titulo" name="titulo" class="form-control" placeholder="post">
-                                <p class="help-block">Titulo</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Subtitulo</label>
-                                <input id="subtitulo" name="subtitulo" class="form-control" placeholder="primer posts">
-                                <p class="help-block">Subtitulo</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Icono</label>
-                                <input id="icono" name="icono" class="form-control" placeholder="icono">
+                                <label>Operacion</label>
+                                <input id="operacion" name="operacion" class="form-control" placeholder="operacion">
                                 <p class="help-block">Icono</p>
                             </div>
-
-                            <div class="form-group">
-                                <label>Texto</label>
-                                <input id="texto" name="texto" class="form-control" placeholder="texto">
-                                <p class="help-block">Texto</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Imagen</label>
-                                <input id="imagen" name="imagen" class="form-control" placeholder="imagen">
-                                <p class="help-block">Imagen</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Video</label>
-                                <input id="video" name="video" class="form-control" placeholder="video">
-                                <p class="help-block">Video</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Sonido</label>
-                                <input id="sonido" name="sonido" class="form-control" placeholder="sonido">
-                                <p class="help-block">Sonido</p>
-                            </div>                     
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>
 
